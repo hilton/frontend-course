@@ -27,7 +27,14 @@ class window.Claim extends Backbone.RelationalModel
 
   # This is a typical custom business-logic method.
   countLines: ->
-    @get('lines').length  
+    @get('lines').length
+
+  # Returns the total claim amount
+  total: ->
+    @get('lines').reduce(
+        (total, line) ->
+          total + line.get('amountIncVat')
+      0)
   
   
 # Backbone has special collections, that are aware of the 

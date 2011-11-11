@@ -88,7 +88,9 @@ $ ->
       
       # Here we use toJSON, just because we can. You can also just give
       # the @model to the template.
-      $(@el).append @template @model.toJSON()
+      fields = @model.toJSON()
+      fields.model = @model
+      $(@el).append @template fields
       
       # We're returning this, but since Coffeescript automatically
       # returns the last expression, we left off the 'return' keyword this time

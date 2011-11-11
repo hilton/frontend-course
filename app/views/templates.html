@@ -8,6 +8,7 @@
       <th>Claim Date</th>
       <th>Start</th>
       <th>End</th>
+      <th>Total</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -25,6 +26,7 @@ fields are immediately available
   <td><%= claimDate %></td>
   <td><%= startDate %></td>
   <td><%= endDate %></td>
+  <td><%= model.total() %></td>
   <td><span class="update">update</span> - <span class="delete">delete</span></td>
 </script>
 
